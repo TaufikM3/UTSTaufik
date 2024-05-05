@@ -5,17 +5,24 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/Home',
+      path: '/',
       name: 'home',
-      component: () => import('@/components/Home/TampilanHome.vue')
+      component: HomeView
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      path: '/dosen',
+      name: 'dosen',
+      component: () => import('@/components/Dosen/DosenForm.vue')
+    },
+    {
+      path: '/mahasiswa', // Path untuk route mahasiswa
+      name: 'mahasiswa',
+      component: () => import('@/components/Mahasiswa/MahasiswaForm.vue')
+    },
+    {
+      path: '/ruangan',
+      name: 'ruangan',
+      component: () => import('@/components/Ruangan/RuanganForm.vue')
     }
   ]
 })
